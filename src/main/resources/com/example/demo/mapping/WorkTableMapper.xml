@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.demo.mapping.WorkTableMapper">
+    <insert id="insertWorkTable" parameterType="com.example.demo.Tables.Work_table">
+        INSERT INTO WORK_TABLE (Work_Times, staff_Id, stuff_Name)
+        VALUES (CAST(ARRAY[(CAST(#{workTimes[0].timestamp} AS timestamp), #{workTimes[0].duration})] AS Complex_Type[]),
+                #{staffId},
+                #{stuffName})
+    </insert>
+</mapper>

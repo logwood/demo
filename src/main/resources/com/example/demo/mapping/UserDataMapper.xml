@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.demo.mapping.UserDataMapper">
+    <resultMap id="BaseResultMap" type="com.example.demo.Tables.userDto" >
+        <id column="keynum" property="keynum" jdbcType="CHAR" />
+        <result column="id" property="id" jdbcType="CHAR" />
+        <result column="keydate" property="keydate" jdbcType="TIME" />
+        <collection property="testUserList" ofType="com.example.demo.Tables.TestUser"
+                    select="test_user" column="id">
+        </collection>
+    </resultMap>
+
+    <select id="queryOrderList" resultMap="BaseResultMap">
+        select * from user_data where keynum='11111';
+    </select>
+
+</mapper>

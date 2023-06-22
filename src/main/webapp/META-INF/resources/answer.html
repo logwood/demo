@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>springboot-thymeleaf demo</title>
+</head>
+<body>
+<table border="1" width="1000">
+    <thead>
+    <tr>
+        <td>学生学号</td>
+        <td>课程号</td>
+        <td>得分</td>
+        <td>备注</td>
+    </tr>
+    </thead>
+    <tr th:each="item,eee: ${Grades}">
+        <td th:text="${item.SID}"></td>
+        <td th:text="${item.CID}"></td>
+        <td th:text="${item.SCORE}"></td>
+        <td th:text="${item.NOTE}"></td>
+    </tr>
+
+</table>
+</body>
+</html>
+</html>
